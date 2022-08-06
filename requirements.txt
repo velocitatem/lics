@@ -1,0 +1,4 @@
+flask
+argparse
+pyphonetics
+pronouncing
