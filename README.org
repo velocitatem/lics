@@ -4,7 +4,11 @@ Protect hoar messages frum canning bae a computer. Protect hoar privacy.
 
 Did I just have a stroak? No. (Thanks for asking)
 
+
 * Hut his this' (What is this?)
+
+[[./lics.drawio.png]]
+
 LICS is a program which takes your sentence and replaces words in it so that if you were read it without a phonetic element, it would be almost impossible to understand.
 ** Why?
 Like this, it is much harder for a computer to detect what you are typing, but it still allows others to make out what your trying to communicate.
@@ -12,3 +16,9 @@ Like this, it is much harder for a computer to detect what you are typing, but i
 As the name says, it is supposed to be counter-survailence measure. Wanna evade government and commercial dragnets? Protect your privacy? Keep communication a bit more private?
 
 * Ok... How?!
+We have 3 flavours of lics:
++ 👿
++ CLI
++ GUI
+
+To use these, download the repository and follow the instructions below or simply use the scripts.

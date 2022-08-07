@@ -1,37 +1,16 @@
-import argparse
-from pyphonetics import RefinedSoundex
-import pronouncing as pr
+from lics import *
 import pyperclip as pc
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QPushButton, QAction, QLineEdit, QMessageBox
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
 
-def modify_sentence(sentence):
-    rs = RefinedSoundex()
-    phrase = sentence
-
-    def find_best_word(words, target):
-
-        min_backup_distance = 5
-        backup = target
-        for word in words:
-            distance = rs.distance(word, target)
-            if distance < 1:
-                return word
-            elif distance < min_backup_distance:
-                backup = word
-                min_backup_distance = distance
-        return backup
-
-    sf = [find_best_word(pr.rhymes(word), word) for word in phrase.split(" ")]
-    return " ".join(sf)
 
 class App(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.title = 'PyQt5 textbox - pythonspot.com'
+        self.title = 'LICS'
         self.left = 10
         self.top = 10
         self.width = 400
@@ -48,7 +27,7 @@ class App(QMainWindow):
         self.textbox.resize(280,40)
         
         # Create a button in the window
-        self.button = QPushButton('Show text', self)
+        self.button = QPushButton('Encode', self)
         self.button.move(20,80)
         
         # connect button to function on_click
