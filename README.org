@@ -1,5 +1,7 @@
 #+title: Linguistic Counter-Survailence [LICS]
 
+[[./logo.jpg]] 
+
 Protect hoar messages frum canning bae a computer. Protect hoar privacy.
 
 Did I just have a stroak? No. (Thanks for asking)
@@ -22,3 +24,13 @@ We have 3 flavours of lics:
 + GUI
 
 To use these, download the repository and follow the instructions below or simply use the scripts.
+** Daemon
+The best way to go about usin the daemon is to use a key-binding on your machine to trigger the script. This is best done on linux.
+*** BSPWM/sxhkd
+Add this into sxhkdrc and whenever you want to encode some message, put it into your clipboard and past it right back, fully encode. 
+#+begin_src 
+alt + e
+    python /path/to/lics-daemon.py &
+#+end_src
+*** YOUR USAGE HERE
+

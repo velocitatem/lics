@@ -18,7 +18,7 @@ def remove_non_words(lst):
                 lst[i] = replace_extras_in_word(word, extras)
     return (lst, replace)
 
-def modify_sentence(sentence):
+def modify_sentence(sentence, randomize=False):
     rs = RefinedSoundex()
     phrase = sentence
 
@@ -41,6 +41,7 @@ def modify_sentence(sentence):
         return backup
 
     sf = [find_best_word(pr.rhymes(word), word) for word in split_phrase]
+
 
     # repair the list using replace / premod[1]
 

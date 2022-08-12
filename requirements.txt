@@ -2,3 +2,5 @@ flask
 argparse
 pyphonetics
 pronouncing
+pyperclip
+plyer
