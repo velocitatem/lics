@@ -1,8 +1,9 @@
 import argparse
 from pyphonetics import RefinedSoundex
 import pronouncing as pr
+import random
 
-extras=[",", "!", "?"]
+extras=[",", "!", "?", "."]
 def remove_non_words(lst):
     def replace_extras_in_word(word, ext):
         for ex in ext:
@@ -40,7 +41,17 @@ def modify_sentence(sentence, randomize=False):
                 min_backup_distance = distance
         return backup
 
-    sf = [find_best_word(pr.rhymes(word), word) for word in split_phrase]
+
+    def find_random_word(words, target):
+        if len(words) > 0:
+            return random.choice(words)
+        else:
+            return target
+
+    if not randomize:
+        sf = [find_best_word(pr.rhymes(word), word) for word in split_phrase]
+    else:
+        sf = [find_random_word(pr.rhymes(word), word) for word in split_phrase]
 
 
     # repair the list using replace / premod[1]

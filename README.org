@@ -32,5 +32,10 @@ Add this into sxhkdrc and whenever you want to encode some message, put it into 
 alt + e
     python /path/to/lics-daemon.py &
 #+end_src
-*** YOUR USAGE HERE
+*** YOUR USAGE HERE 
+
+* Wishlist / Roadmap
++ Create a floating widget
+  + https://www.simplifiedcoding.net/android-floating-widget-tutorial/
+  + https://www.geeksforgeeks.org/how-to-make-a-floating-window-application-in-android/
 
