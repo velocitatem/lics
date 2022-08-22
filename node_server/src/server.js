@@ -14,7 +14,7 @@ app.get("/stat", (req, res) => {
 app.get("/make/:text", (req, res) => {
 
     const { exec } = require("child_process");
-    exec(`python3 /home/velo/Documents/Projects/LCS/lcs/lics-cli.py -m "${req.params.text}"`, (error,stdout,stderr) => {
+    exec(`python3 ~/lcs/lics-cli.py -m "${req.params.text}"`, (error,stdout,stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
