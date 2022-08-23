@@ -1,9 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path'
+const cors = require('cors')
 const app = express();
+var corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
-app.use(express.static(path.join(__dirname, '/build'))) //to host a build website
+app.user(cors(corsOptions));
 app.use(bodyParser.json()) // to process params
 
 app.get("/stat", (req, res) => {
@@ -24,7 +29,8 @@ app.get("/make/:text", (req, res) => {
             return;
         }
         console.log(`stdout: ${stdout}`);
-        res.status(200).send(stdout)
+        res.header("Access-Control-Allow-Origin", "*");
+        res.status(200).json([stdout]);
     });
     
 })
