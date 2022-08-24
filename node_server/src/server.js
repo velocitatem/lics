@@ -8,7 +8,7 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-app.user(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(bodyParser.json()) // to process params
 
 app.get("/stat", (req, res) => {
@@ -29,11 +29,10 @@ app.get("/make/:text", (req, res) => {
             return;
         }
         console.log(`stdout: ${stdout}`);
-        res.header("Access-Control-Allow-Origin", "*");
         res.status(200).json([stdout]);
     });
     
 })
 
 //server log
-app.listen(80, () => console.log("server is listening on port 8000, happy coding"))
+app.listen(8050, () => console.log("server is listening on port 8000, happy coding"))
